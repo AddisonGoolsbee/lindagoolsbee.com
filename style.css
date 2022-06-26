@@ -115,6 +115,7 @@ footer {
 	justify-content: center;
 	flex-direction: row;
 	margin: 3%;
+	margin-top: 1%;
 	gap: 6%;
 }
 
@@ -429,7 +430,7 @@ hr {
 	
 	font-style: italic;
 	color: #333;
-	font-size: min(14px, max(1.6vw, 12px));
+	font-size: min(16px, max(1.6vw, 12px));
 }
 
 #previousEventsContainer {
