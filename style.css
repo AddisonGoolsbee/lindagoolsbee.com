@@ -23,7 +23,7 @@ body, html {
 	height: 11vh;
 }
 
-#Events, #Contact {
+#Events, #Donate {
 	background: #f4f4f4;
 }
 
@@ -42,11 +42,11 @@ h1, p {
 	transform: translate(-50%, -50%);
 }
 
-#Home, #section3, #section5 {
+#Home, #section3, #section4 {
 	background: white;
 }
 
-#section2, #section4 {
+#section2, #gallery, #section5 {
 	background: #f4f4f4;
 }
 
@@ -78,6 +78,19 @@ h1, p {
 #lastButton {
 	margin-right: 3vw;
 }
+
+@media screen and (max-width: 600px) {
+	.navButton {
+		margin: 0;
+		padding: 0.8vh 1.5vw;
+	}
+
+	#lastButton {
+		margin-right: 2vw;
+	}
+}
+
+
 
 .navButton.active {
 	background: #c9c9c9c9;
@@ -154,12 +167,26 @@ footer {
 	font-weight: 700;
 }
 
+.homeBlurb {
+	background-color:rgba(255, 255, 255, 0.7);
+	margin: 0 7vw;
+	padding: min(4%, 20px) min(7%, 50px);
+}
+
+
 .bigBlurb {
+	opacity: 1;
 	font-weight: 400;
-	margin: 0 10%;
-	line-height: 3vh;
+	line-height: 150%;
 	word-spacing: 3px;
-	font-size: min(19px, 3vw);
+	font-size: max(14px, min(17px, 2.5vw));
+	text-align: justify;
+}
+
+#Home {
+	background-image: url("assets/southwest.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 /* About */
@@ -201,7 +228,7 @@ footer {
 
 #boardsBlurbSection {
 	text-align: left;
-	width: min(400px, 50vw);
+	width: min(500px, 65vw);
 	margin-right: 0;
 	margin-left: auto;
 }
@@ -246,6 +273,7 @@ footer {
 
 #section5 {
 	line-height: 1;
+	background-color: #f4f4f4;
 }
 
 #section5 .sectionTitle {
@@ -254,14 +282,12 @@ footer {
 	color: #444;
 }
 
-
 #contactText {
 	font-weight: 300;
 	margin: 0;
 	padding: 0;
 	line-height: 1;
 }
-
 
 #contactSplitContainer {
 	display: flex;
@@ -290,7 +316,7 @@ footer {
 	font-size: 24px;
 	margin: 0;
 	padding: 1.5%;
-	margin-bottom: min(40px, 5%);
+	padding-bottom: min(50px, 6%);
 }
 
 hr {
@@ -335,19 +361,18 @@ hr {
 	color: black;
 }
 
-
 #mailDescription {
 	margin: 0.5% 0 1% 0;
 	font-weight: 400;
 	font-style: italic;
-	font-size: 18px;
+	font-size: max(16px, min(18px, 3vw));
 }
 
 #donateAddressContainer {
 	display: flex;
 	justify-content: center;
 	gap: 5%;
-	margin-top: 2%;
+	margin-top: 0%;
 	width: 100%;
 }
 
@@ -368,7 +393,7 @@ hr {
 
 #signedNote {
 	margin: 0;
-	margin-top: 0.5%;
+	margin-top: 1%;
 	font-weight: 400;
 	font-size: 16px;
 	width: 70%;
@@ -460,5 +485,50 @@ hr {
 }
 
 #Contact {
-	height: 5vw;
+	height: 6vw;
 }
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1%;
+	padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+	flex: 22%;
+	max-width: 22%;
+	padding: 0px;
+  }
+  
+  .column img {
+	margin-top: 8px;
+	vertical-align: middle;
+	width: 100%;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+	.column {
+	  flex: 45%;
+	  max-width: 45%;
+	}
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+	.column {
+	  flex: 100%;
+	  max-width: 100%;
+	}
+  }
+
+#galleryContainer {
+	padding: 0 5%;
+}
+
+/* #Donate, #Contact {
+	background: green;
+} */
