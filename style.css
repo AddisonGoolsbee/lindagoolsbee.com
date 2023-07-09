@@ -9,6 +9,9 @@ body, html {
 	font-family: 'Lato';
 	background: white;
 	overflow-x: hidden;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 }
 
 .section {
@@ -53,7 +56,6 @@ h1, p {
 .nav {
 	font-family: 'Lato';
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	position: fixed;
 	top: 0;
@@ -64,29 +66,63 @@ h1, p {
 	height: 11vh;
 }
 
+nav {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: right;
+	margin: 0 2vw;
+}
+
+.nav .row {
+	display: flex;
+	flex-direction: row;
+	padding: 0 0;
+	margin: 0;
+	justify-content: left;
+	flex-wrap: nowrap;
+}
+
+.nav .row:first-of-type {
+	margin-right: 1vw;
+}
+
 .navButton {
-	padding: 0.8vh 2vw;
+	padding: 7px 1vw;
 	border-radius: 7px;
 	margin-right: 1vw;
 	background: rgba(255, 255, 255, 0);
 	text-decoration: none;
 	color: rgb(0, 4, 72);
 	font-weight: 700;
-	font-size: min(24px, max(2.1vw, 12px));
+	font-size: min(24px, max(2.1vw, 16px));
 }
 
-#lastButton {
-	margin-right: 3vw;
-}
-
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
 	.navButton {
-		margin: 0;
-		padding: 0.8vh 1.5vw;
+		margin-right: 0.5vw;
+		padding: 7px 0.5vw;
 	}
+}
 
-	#lastButton {
-		margin-right: 2vw;
+@media only screen and (max-device-width: 600px), only screen and (max-width: 550px) {
+	nav {
+		flex-direction: column;
+	}
+	.nav .row {
+		width: 100%;
+		justify-content: center;
+	}
+	.navButton {
+		font-size: 16px;
+	}
+}
+
+@media only screen and (max-device-width: 600px) {
+	.navButton {
+		font-size: 36px;
+		padding: 12px 1vw;
+		margin-right: 1vw;
 	}
 }
 
@@ -107,6 +143,10 @@ h1, p {
 }
 
 .logoContainer {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	min-width: 100px;
 	max-width: 18vh;
 	height: 11vh;
 }
@@ -127,9 +167,9 @@ footer {
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	margin: 3%;
-	margin-top: 1%;
-	gap: 6%;
+	margin: 3% 0;
+	gap: 4%;
+	max-height: 250px;
 }
 
 .sectionTitle {
@@ -138,39 +178,49 @@ footer {
 	padding: min(40px, 5%) 0;
 }
 
+@media only screen and (max-device-width: 600px) {
+	.sectionTitle {
+		padding: 80px;
+		font-size: 70px;
+	}
+	.splitContainer {
+		margin: 3% 0;
+	}
+}
+
 /* Home */
 #Home .innerSection {
-	padding-top: 12vh;
+	padding-top: 11vh;
 }
 
 .homePic {
 	width: 40%;
 	min-width: 200px;
-	max-width: 300px;
+	max-width: 250px;
 	height: auto;
+	border-radius: 10px;
 }
 
 .electLogo {
 	width: 50%;
-	max-width: 400px;
+	max-width: 350px;
 	min-width: 200px;
 	height: auto;
 }
 
 #Home h1 {
-	/* here */
 	margin-top: 0%;
 	margin-bottom: 2%;
-	/* here */
 	font-family: 'Lato';
-	font-size: min(45px, 5vw);
+	font-size: min(55px, 5vw);
 	font-weight: 700;
 }
 
 .homeBlurb {
-	background-color:rgba(255, 255, 255, 0.7);
-	margin: 0 7vw;
-	padding: min(4%, 20px) min(7%, 50px);
+	background-color:rgba(255, 255, 255, 0.8);
+	margin: 0 3vw;
+	padding: min(4%, 20px) min(7%, 35px);
+	border-radius: 5px;
 }
 
 
@@ -181,6 +231,7 @@ footer {
 	word-spacing: 3px;
 	font-size: max(14px, min(17px, 2.5vw));
 	text-align: justify;
+	text-justify: inter-word;
 }
 
 #Home {
@@ -189,12 +240,79 @@ footer {
 	background-size: cover;
 }
 
+@media only screen and (max-device-width: 600px) {
+	.homePic {
+		width: 50%;
+		min-width: 300px;
+		max-width: 500px;
+		border-radius: 20px;
+	}
+	.splitContainer {
+		max-height: none;
+	}
+	.electLogo {
+		display: none;
+	}
+	#Home h1 {
+		margin: 20px 0;
+		font-size: 60px;
+	}
+	.bigBlurb {
+		font-size: 30px;
+		line-height: 1.4;
+	}
+	.homeBlurb {
+		margin: 0 3vw;
+	}
+}
+
+/* Issues */
+
+#Issues .sectionTitle {
+	margin-top: 2vh;
+}
+
+.issuesBody {
+	display: flex;
+	justify-content: center;
+	padding: 0 40px;
+}
+
+.issuesBody ul{
+	list-style-type: none;
+	padding:  0px;
+	margin: 0;
+}
+
+#Issues li{
+	font-size: clamp(18px, 3vw, 30px);
+	margin: 2vh 0;
+}
+
+#Issues li:last-of-type {
+	margin-bottom: 0;
+}
+
+#Issues li:first-of-type {
+	margin-top: 2vw;
+}
+
+@media only screen and (max-device-width: 600px) {
+	#Issues li{
+		font-size: 38px;
+	}
+}
+
+
+
 /* About */
 .blurb {
 	font-weight: 400;
-	margin: 0 10% 0 10%;
+	margin: 0 8%;
 	line-height: 3vh;
 	font-size: min(16px, 3vw);
+	text-align: justify;
+	text-justify: inter-word;
 }
 
 .aboutContainer {
@@ -264,9 +382,29 @@ footer {
 	width: 80%;
 }
 
-
 .container {
 	display: flex;
+}
+
+@media only screen and (max-device-width: 600px) {
+	.blurb {
+		margin: 0 5%;
+		font-size: 28px;
+		line-height: 1.5;
+	}
+	.boardsBlurb, .businessBlurb, .democraticBlurb {
+		padding: 2% 2% 2% 0%;
+	}
+	.boardsBlurb {
+		padding-bottom: 0;
+	}
+	.boardsBlurb h2, .businessBlurb h2, .democraticBlurb h2 {
+		font-size: 36px;
+	}
+	.boardsBlurb ul, .businessBlurb ul, .democraticBlurb ul {
+		font-size: 28px;
+		line-height: 1.5;
+	}
 }
 
 /* Contact */
@@ -274,6 +412,7 @@ footer {
 #section5 {
 	line-height: 1;
 	background-color: #f4f4f4;
+	color: #666;
 }
 
 #section5 .sectionTitle {
@@ -282,8 +421,12 @@ footer {
 	color: #444;
 }
 
+#section5 .innerSection{
+	font-size: 12px;
+}
+
 #contactText {
-	font-weight: 300;
+	font-weight: 400;
 	margin: 0;
 	padding: 0;
 	line-height: 1;
@@ -301,19 +444,17 @@ footer {
 }
 
 #contactSplitContainer h2 {
-	font-weight: 300;
+	font-weight: 400;
 }
 
 #contactNumber {
-	font-weight: 300;
-	font-size: 24px;
+	font-weight: 400;
 	margin: 0;
 	padding: 0;
 }
 
 #contactEmail {
-	font-weight: 300;
-	font-size: 24px;
+	font-weight: 400;
 	margin: 0;
 	padding: 1.5%;
 	padding-bottom: min(50px, 6%);
@@ -324,8 +465,18 @@ hr {
 	margin: min(30px, 3%) 10%;
 }
 
-/* Donate */
 
+
+@media only screen and (max-device-width: 600px) {
+	#contactEmail {
+		padding-bottom: 80px;
+	}
+	#section5 .innerSection {
+		font-size: 22px;
+	}
+}
+
+/* Donate */
 #donateButton {
 	background-color: rgb(69, 87, 244);
 	border-radius: 20px;
@@ -395,9 +546,36 @@ hr {
 	margin: 0;
 	margin-top: 1%;
 	font-weight: 400;
-	font-size: 16px;
+	font-size: 12px;
 	width: 70%;
 	line-height: 1.4;
+}
+
+@media only screen and (max-device-width: 600px) {
+	#donateButton {
+		border-radius: 30px;
+		padding: 40px;
+		margin-bottom: 10%;
+		text-decoration:none;
+		font-weight: 400;
+		font-size: 45px;
+	}
+	#mailDonationContainer h1 {
+		font-size: 50px;
+	}
+	#mailDescription {
+		font-size: 28px;
+	}
+	#donateAddressContainer h2 {
+		font-size: 28px;
+	}
+	#signedNote {
+		font-size: 20px;
+		width: 90%;
+	}
+	#section4 .innerSection {
+		margin-bottom: 30px;
+	}
 }
 
 /* Events */
@@ -452,7 +630,6 @@ hr {
 }
 
 .event p {
-	
 	font-style: italic;
 	color: #333;
 	font-size: min(16px, max(1.6vw, 12px));
@@ -479,10 +656,32 @@ hr {
 	margin-bottom: min(25px, 5%);
 }
 
-
 #upcomingEvents {
 	align-items: center;
 }
+
+@media only screen and (max-device-width: 600px) {
+	#section3 h2 {
+		font-size: 40px;
+		margin: 5% 0;
+	}
+	.event h3 {
+		margin-bottom: 3%;
+		font-size: 28px;
+	}
+	.eventDetails {
+		margin-bottom: min(25px, 5%);
+		font-size: 20px;
+	}
+	.event p {
+		font-size: 20px;
+	}
+	.event {
+		padding: 3%;
+	}
+}
+
+/* Gallery */
 
 #Contact {
 	height: 6vw;
@@ -525,10 +724,15 @@ hr {
 	}
   }
 
+  @media screen and (max-device-width: 600px) {
+	.column {
+		flex: 45%;
+		max-width: 45%;
+	}
+  }
+
+
+
 #galleryContainer {
 	padding: 0 5%;
 }
-
-/* #Donate, #Contact {
-	background: green;
-} */
