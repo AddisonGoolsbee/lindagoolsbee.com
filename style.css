@@ -196,6 +196,9 @@ footer {
 /* Home */
 #Home .innerSection {
   padding-top: 11vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .homePic {
@@ -224,8 +227,9 @@ footer {
 .homeBlurb {
   background-color: rgba(255, 255, 255, 0.8);
   margin: 0 3vw;
-  padding: min(4%, 20px) min(7%, 35px);
+  padding: min(4%, 30px) min(7%, 35px);
   border-radius: 5px;
+  max-width: 1000px;
 }
 
 .bigBlurb {
