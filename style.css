@@ -323,11 +323,33 @@ footer {
 
 .aboutContainer {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.aboutSegmentsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
 }
 
 .aboutSection {
   display: flex;
   /* flex: 0.2; */
+}
+
+.aboutImgLeft {
+  max-width: 25%;
+  height: auto;
+  margin-right: 4vw;
+  object-fit: contain;
+}
+
+.aboutImgRight {
+  max-width: 25%;
+  height: auto;
+  margin-left: 4vw;
+  object-fit: contain;
 }
 
 .boardsBlurb,
@@ -336,7 +358,7 @@ footer {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 2% 5%;
+  padding: 2% 0%;
   color: #333;
   text-align: left;
 }
@@ -349,15 +371,13 @@ footer {
 }
 
 .boardsBlurb {
-  align-self: flex-end;
   flex: 1;
+  align-items: end;
+  margin-right: 5vw;
 }
 
 #boardsBlurbSection {
-  text-align: left;
-  width: min(500px, 65vw);
-  margin-right: 0;
-  margin-left: auto;
+  min-width: 45vw;
 }
 
 #boardsImageSection {
@@ -369,7 +389,7 @@ footer {
 }
 
 .boardsBlurb h2 {
-  margin: 1% 0 1% 0;
+  margin: -1% 0 1% 3%;
 }
 
 .democraticBlurb h2 {
@@ -381,15 +401,12 @@ footer {
 .boardsBlurb ul {
   list-style-type: "-  ";
   margin: 0;
-  margin-left: 8%;
+  margin-left: 7%;
+  margin-right: 2%;
   padding: 0;
   line-height: 180%;
   color: #444;
   font-size: min(16px, 2.5vw);
-}
-
-.businessBlurb ul {
-  width: 80%;
 }
 
 .container {
