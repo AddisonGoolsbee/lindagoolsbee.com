@@ -631,6 +631,7 @@ hr {
   padding: 3% 4%;
   margin-bottom: min(25px, 4%);
   width: min(450px, max(50%, 300px));
+  border-radius: 10px;
 }
 
 .event h3 {
@@ -774,4 +775,11 @@ hr {
   font-size: 2em;
   font-weight: bold;
   line-height: 1.4em;
+}
+
+.eventImg {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
 }
