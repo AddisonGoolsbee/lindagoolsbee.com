@@ -783,4 +783,12 @@ hr {
   border-radius: 10px;
   margin-top: 20px;
   border: 5px solid #eee;
+  object-fit: cover;
+}
+
+@media (max-aspect-ratio: 3/2) {
+  .eventImg {
+    height: auto; /* You can set this to a fixed height if needed */
+    aspect-ratio: 3/2;
+  }
 }
