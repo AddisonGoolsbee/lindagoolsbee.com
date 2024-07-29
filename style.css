@@ -206,7 +206,8 @@ footer {
   min-width: 200px;
   max-width: 250px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 7electLogopx;
+  margin: 2vw 0;
 }
 
 .electLogo {
@@ -259,7 +260,7 @@ footer {
     max-height: none;
   }
   .electLogo {
-    display: none;
+    min-width: 500px;
   }
   #Home h1 {
     margin: 20px 0;
