@@ -174,23 +174,13 @@ footer {
   flex-direction: row;
   margin: 3% 0;
   gap: 4%;
-  max-height: 250px;
+  max-height: 300px;
 }
 
 .sectionTitle {
   font-weight: 700;
   font-size: max(36px, min(50px, 6vw));
   padding: min(40px, 5%) 0;
-}
-
-@media only screen and (max-device-width: 600px) {
-  .sectionTitle {
-    padding: 80px;
-    font-size: 70px;
-  }
-  .splitContainer {
-    margin: 3% 0;
-  }
 }
 
 /* Home */
@@ -204,9 +194,9 @@ footer {
 .homePic {
   width: 40%;
   min-width: 200px;
-  max-width: 250px;
+  max-width: 300px;
   height: auto;
-  border-radius: 7electLogopx;
+  border-radius: 5px;
   margin: 2vw 0;
 }
 
@@ -215,6 +205,23 @@ footer {
   max-width: 350px;
   min-width: 200px;
   height: auto;
+  border-radius: 5px;
+}
+
+@media only screen and (max-device-width: 600px) {
+  .sectionTitle {
+    padding: 80px;
+    font-size: 70px;
+  }
+  .splitContainer {
+    margin: 3% 0;
+  }
+  .electLogo {
+    display: none;
+  }
+  .homePic {
+    flex-grow: 1;
+  }
 }
 
 #Home h1 {
