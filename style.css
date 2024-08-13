@@ -208,6 +208,13 @@ footer {
   border-radius: 5px;
 }
 
+.slogan {
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: bolder;
+  font-style:italic;
+  margin-top: 40px;
+}
+
 @media only screen and (max-device-width: 600px) {
   .sectionTitle {
     padding: 80px;
@@ -292,6 +299,7 @@ footer {
   display: flex;
   justify-content: center;
   padding: 0 40px;
+  flex-direction: column;
 }
 
 .issuesBody ul {
