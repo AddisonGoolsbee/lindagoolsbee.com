@@ -23,7 +23,8 @@
             </div>
             <div class="row">
                 <a class="navButton" href="#Gallery">Gallery</a>
-                <a class="navButton" href="#Donate">Donate</a>
+                <!-- To bring back the Donate section, uncomment this button AND the Donate section further down -->
+                <!-- <a class="navButton" href="#Donate">Donate</a> -->
                 <a class="navButton" href="#Contact" id="lastButton">Contact</a>
             </div>
         </nav>
@@ -36,7 +37,30 @@
                 <img class="electLogo" src="assets/electLinda.webp" , alt="electLogo" />
             </div>
             <div class="homeBlurb">
-                <h1>Why I Ran in 2024</h1>
+                <h1>Why I Am NOT Running in 2026</h1>
+
+                <h3 class="bigBlurb">Although the Republican controlled Texas Legislature continues its corrupt and
+                    cruel regime, a new generation of Democrats is rising up in Texas. Every state office in Texas is
+                    being contested this year, including our State Representative candidate for House District 71:
+                    Diana Luna!
+                </h3>
+
+                <div class="dianaContainer">
+                    <div class="dianaIntro">
+                        <h1>Diana Luna</h1>
+                        <img class="dianaPic" src="assets/dianaLuna.jpeg" alt="Diana Luna" />
+                    </div>
+                    <h3 class="bigBlurb">I am proud to support Diana Luna as our Democratic candidate for the Texas
+                        Legislature. I have worked with her on many events and found her exceptional at analyzing,
+                        organizing, and completing projects. She is an experienced analyst who has operated, supervised
+                        and audited non-profit programs for almost 20 years, including many that rely on government
+                        funding. She is competent, intelligent, and has deep knowledge and compassion about the issues
+                        facing hardworking Texas families. Check her out at <a href="https://www.dianalunafortexas.com/"
+                            target="_blank">DianaLunaForTexas.com</a>.
+                    </h3>
+                </div>
+
+                <h1>Why I Ran in 2022 and 2024</h1>
 
                 <h3 class="bigBlurb">After decades of one-party rule, Texas had huge problems. Ignored by our
                     Legislature for years,
@@ -75,7 +99,7 @@
                     <center>
                         <span class="saveTexas">Save Texas Now</span>
                         <br>
-                        <span class="saveTexas">Vote Democratic in 2024</span>
+                        <span class="saveTexas">Vote Democratic in <span id="electionYear">2026</span></span>
                     </center>
                 </h3>
             </div>
@@ -221,7 +245,7 @@
                 <!-- EVENTS -->
                 <!-- This is the format: -->
 
-                <!-- <div class="event">
+                <!-- <div class="event" data-date="2026-03-03">
                     <h3></h3>
                     <ul class="eventDetails">
                         <li> <i class="fa fa-calendar"></i> </li>
@@ -232,15 +256,35 @@
                     <p></p>
                 </div> -->
 
+                <!-- data-date is the LAST day of the event (YYYY-MM-DD). Once that day has passed, the event moves
+                     itself into "Previous Events" automatically. Leave data-date off for recurring events (like the
+                     weekly donut mornings) that should stay in "Upcoming Events" forever. -->
+
+
                 <h2>Upcoming Events</h2>
+
+                <div class="event">
+                    <h3>Taylor County Democratic Party Headquarters Now Open</h3>
+                    <ul class="eventDetails">
+                        <li> <i class="fa fa-calendar"></i> Tuesday, Thursday & Saturday</li>
+                        <li> <i class="fa fa-clock-o"></i> Tuesday & Thursday: 10:00 AM - 5:00 PM</li>
+                        <li> <i class="fa fa-clock-o"></i> Saturday: 1:00 - 4:00 PM</li>
+                        <li> <i class="fa fa-building"></i> Taylor County Democratic Party HQ</li>
+                        <li> <i class="fa fa-map-marker"></i> 141 S. Leggett Drive, Abilene, 325-677-1776</li>
+                        <li> <i class="fa fa-envelope"></i> taylorcountytxdemocrats@gmail.com</li>
+                    </ul>
+                    <p>Register to vote, pick up yard signs, stickers and information about candidates and upcoming
+                        events.</p>
+                    <img class="eventImg" style="border: none;" src="assets/ah1.jpeg" alt="pic" />
+                </div>
 
                 <div class="event">
                     <h3>Donuts With Democrats</h3>
                     <ul class="eventDetails">
                         <li> <i class="fa fa-calendar"></i> Saturday mornings</li>
                         <li> <i class="fa fa-clock-o"></i> 10:00 AM - Noon</li>
-                        <li> <i class="fa fa-building"></i> Taylor County Democratic Party HQ</li>
-                        <li> <i class="fa fa-map-marker"></i> 141 S. Leggett Drive, Abilene, 325-677-1776</li>
+                        <li> <i class="fa fa-building"></i> Abilene Woman's Club</li>
+                        <li> <i class="fa fa-map-marker"></i> 3126 South 11th Street (Between Barrow and Willis)</li>
                     </ul>
                     <p>Join us for free coffee and donuts with fellow Democrats. Drop by to vent or plan or just visit.
                         Now is the time to band together.</p>
@@ -576,6 +620,10 @@
         </div>
     </div>
 
+    <!-- DONATE SECTION - DISABLED
+         To reactivate: uncomment everything between this line and the "END DONATE SECTION" marker below,
+         and uncomment the "Donate" nav button at the top of the page.
+
     <div id="Donate" class="sectionBottom"></div>
 
     <div id="section4" class="section">
@@ -598,6 +646,8 @@
         </div>
     </div>
 
+         END DONATE SECTION -->
+
     <div id="Contact" class="sectionBottom"></div>
 
     <div id="section5" class="section">
@@ -613,8 +663,48 @@
         </div>
     </div>
 
-    <footer>Political advertisement paid for by Linda Goolsbee for HD-71</footer>
+    <footer>
+        <div>Political advertisement paid for by Linda Goolsbee for HD-71</div>
+        <div id="photoCredit">Header photo: <a
+                href="https://commons.wikimedia.org/wiki/File:Guadalupe_Mountains_National_Park_-_53196823038.jpg"
+                target="_blank">"Guadalupe Mountains National Park"</a> by apasciuto, <a
+                href="https://creativecommons.org/licenses/by/2.0" target="_blank">CC BY 2.0</a></div>
+    </footer>
 
+
+    <script>
+        // The next general election year: Texas votes in even years, on the first Tuesday after the
+        // first Monday in November (never later than the 8th).
+        function nextElectionYear() {
+            const now = new Date();
+            let year = now.getFullYear();
+            if (year % 2 !== 0) return year + 1;
+            return now > new Date(year, 10, 8) ? year + 2 : year;
+        }
+
+        document.getElementById("electionYear").textContent = nextElectionYear();
+
+        // Any upcoming event whose data-date has passed moves itself to the top of "Previous Events".
+        // Events with no data-date are recurring and stay put.
+        (function retireFinishedEvents() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const previous = document.getElementById("previousEventsContainer");
+
+            const finished = Array.from(
+                document.querySelectorAll("#upcomingEvents .event[data-date]")
+            ).filter(function (event) {
+                const parts = event.dataset.date.split("-");
+                const end = new Date(+parts[0], parts[1] - 1, +parts[2]);
+                return end < today;
+            });
+
+            // Newest first, so the most recently finished event ends up at the top of the list.
+            finished
+                .sort(function (a, b) { return a.dataset.date < b.dataset.date ? -1 : 1; })
+                .forEach(function (event) { previous.prepend(event); });
+        })();
+    </script>
 
     <script src="slideNav.js" type="text/javascript"></script>
     <script>

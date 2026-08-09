@@ -160,11 +160,31 @@ footer {
   background-color: rgb(28, 30, 67);
   color: rgb(94, 107, 121);
   display: flex;
-  height: 5rem;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 5rem;
+  padding: 12px 5vw;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-style: italic;
   box-shadow: 20px 15px rgb(28, 30, 67);
+}
+
+#photoCredit {
+  font-size: 11px;
+  font-style: normal;
+  color: rgb(74, 85, 97);
+}
+
+#photoCredit a {
+  color: rgb(94, 107, 121);
+}
+
+@media only screen and (max-device-width: 600px) {
+  #photoCredit {
+    font-size: 18px;
+  }
 }
 
 .splitContainer {
@@ -208,6 +228,47 @@ footer {
   border-radius: 5px;
 }
 
+.dianaContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: min(40px, 4%);
+}
+
+.dianaIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: min(260px, 32%);
+}
+
+#Home .dianaIntro h1 {
+  font-size: min(38px, 3.5vw);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.dianaPic {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 700px) {
+  .dianaContainer {
+    flex-direction: column;
+  }
+  .dianaIntro {
+    width: auto;
+  }
+  #Home .dianaIntro h1 {
+    font-size: min(55px, 5vw);
+  }
+}
+
 .slogan {
   font-size: clamp(24px, 4vw, 40px);
   font-weight: bolder;
@@ -239,6 +300,10 @@ footer {
   font-weight: 700;
 }
 
+#Home h1:not(:first-child) {
+  margin-top: min(40px, 5%);
+}
+
 .homeBlurb {
   background-color: rgba(255, 255, 255, 0.8);
   margin: 0 3vw;
@@ -258,7 +323,7 @@ footer {
 }
 
 #Home {
-  background-image: url("assets/southwest.webp");
+  background-image: url("assets/guadalupeMountains.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -286,6 +351,20 @@ footer {
   }
   .homeBlurb {
     margin: 0 3vw;
+  }
+  .dianaContainer {
+    flex-direction: column;
+  }
+  .dianaIntro {
+    width: auto;
+  }
+  #Home .dianaIntro h1 {
+    font-size: 60px;
+  }
+  .dianaPic {
+    min-width: 300px;
+    max-width: 500px;
+    border-radius: 20px;
   }
 }
 
