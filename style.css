@@ -15,6 +15,42 @@ html {
   text-size-adjust: none;
 }
 
+/* Loading overlay - see revealWhenHeroReady() in index.html */
+#pageLoader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.45s ease;
+}
+
+#pageLoader img {
+  width: min(320px, 60vw);
+  height: auto;
+  animation: loaderPulse 1.4s ease-in-out infinite;
+}
+
+#pageLoader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+@keyframes loaderPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pageLoader img { animation: none; }
+}
+
 .section {
   position: relative;
   text-align: center;
